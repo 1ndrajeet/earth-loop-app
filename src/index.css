@@ -2,87 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Eco-friendly Waste Management Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors */
+    --background: 120 20% 98%;
+    --foreground: 120 10% 15%;
 
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 120 10% 15%;
 
+    /* Interactive elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 120 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary eco-green palette */
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 142 64% 42%;
+    --primary-light: 142 45% 88%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary earth tones */
+    --secondary: 45 25% 94%;
+    --secondary-foreground: 120 10% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted greens */
+    --muted: 120 15% 95%;
+    --muted-foreground: 120 8% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent nature colors */
+    --accent: 142 35% 92%;
+    --accent-foreground: 142 71% 35%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Alert colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --success: 142 71% 45%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and inputs */
+    --border: 120 15% 88%;
+    --input: 120 15% 94%;
+    --ring: 142 71% 45%;
 
     --radius: 0.5rem;
 
+    /* Beautiful eco gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(120 65% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(160 60% 45%) 50%, hsl(120 65% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(142 15% 97%) 100%);
+    --gradient-nature: linear-gradient(120deg, hsl(142 45% 88%) 0%, hsl(120 35% 92%) 100%);
+
+    /* Beautiful shadows */
+    --shadow-eco: 0 4px 20px -2px hsl(142 71% 45% / 0.15);
+    --shadow-card: 0 2px 15px -3px hsl(142 30% 50% / 0.1);
+    --shadow-glow: 0 0 30px hsl(142 71% 55% / 0.2);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark eco theme */
+    --background: 120 15% 8%;
+    --foreground: 120 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 120 10% 12%;
+    --card-foreground: 120 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 120 10% 12%;
+    --popover-foreground: 120 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 142 71% 55%;
+    --primary-foreground: 120 15% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 120 10% 15%;
+    --secondary-foreground: 120 15% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 8% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 120 10% 18%;
+    --accent-foreground: 142 71% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 120 15% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 120 10% 20%;
+    --input: 120 10% 18%;
+    --ring: 142 71% 55%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +122,46 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom eco-friendly component styles */
+@layer components {
+  .hero-section {
+    position: relative;
+    background: var(--gradient-hero);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, hsl(142 71% 45% / 0.9) 0%, hsl(120 65% 50% / 0.8) 100%);
+  }
+
+  .eco-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .eco-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-eco);
+  }
+
+  .eco-button {
+    background: var(--gradient-primary);
+    transition: var(--transition-smooth);
+  }
+
+  .eco-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
   }
 }
